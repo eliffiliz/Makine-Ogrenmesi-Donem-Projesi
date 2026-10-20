@@ -1,0 +1,10 @@
+# Ham veri depoya konmaz (rehber kuralı)
+data/*
+!data/README.md
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+.env
+kaggle.json
+.DS_Store
