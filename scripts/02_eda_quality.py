@@ -1,4 +1,4 @@
-"""EDA adım 1: veri kalitesi ve ifade dağılımları (log öncesi/sonrası).
+﻿"""EDA adım 1: veri kalitesi ve ifade dağılımları (log öncesi/sonrası).
 
 Üretilen çıktılar (figures/):
   eda_class_distribution.(png|pdf)
@@ -22,7 +22,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from src import config
 from src.data_loading import load_golub
 
-FLOOR, CEIL = 20.0, 16000.0  # rehberdeki örnek eşik aralığı
+FLOOR, CEIL = 100.0, 16000.0  # rehberdeki örnek eşik aralığı
 plt.rcParams.update({"font.size": 10, "figure.dpi": 100})
 config.FIG_DIR.mkdir(parents=True, exist_ok=True)
 
