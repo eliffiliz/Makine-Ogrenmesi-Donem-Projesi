@@ -1,0 +1,2 @@
+dataset,n_values,negative_ratio,below_20_ratio,above_16000_ratio,min,median,max
+Armstrong,902376,0.2660332278340736,0.29149046517194604,0.016261514047359416,-15584.0,273.0,58380.0
