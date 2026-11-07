@@ -1,0 +1,11 @@
+analysis,subset,n_train,n_test,mean_diff,median_diff,p_value,auc_mean,auc_std,null_mean,perm_p,genes_tested,sig_fraction,silhouette_by_split,silhouette_by_class
+median shift (test - train),all,38.0,34.0,-0.19222006254664414,-0.2097519738832183,0.015772847870349264,,,,,,,,
+median shift (test - train),ALL only,27.0,20.0,-0.19978242986104533,-0.33222198874183206,0.05278011340609722,,,,,,,,
+median shift (test - train),AML only,11.0,14.0,-0.20582765107685397,-0.2377403856698841,0.11863480432646599,,,,,,,,
+train-vs-test classifier AUC,"all genes, all samples",38.0,34.0,,,,0.782908163265306,0.13997389030509697,0.5057278911564626,0.004975124378109453,,,,
+train-vs-test classifier AUC,"all genes, ALL only",27.0,20.0,,,,0.7496666666666667,0.19556868642784078,0.4967166666666667,0.009950248756218905,,,,
+train-vs-test classifier AUC,"all genes, AML only",11.0,14.0,,,,0.7733333333333333,0.23513589451397862,0.5526666666666666,0.06467661691542288,,,,
+train-vs-test classifier AUC,"top-2000 variance genes, all samples",38.0,34.0,,,,0.8097619047619048,0.11923279330186565,0.5081913265306123,0.004975124378109453,,,,
+within-class train-vs-test gene test,ALL only,27.0,20.0,,,,,,,,3549.0,0.004790081713158636,,
+within-class train-vs-test gene test,AML only,11.0,14.0,,,,,,,,3513.0,0.0,,
+PCA silhouette,all,,,,,,,,,,,,0.048657249843630686,0.14027942378505814
