@@ -1,7 +1,6 @@
 ﻿"""Golub (GPL80) ve MILE (GPL570) icin ortak gen sembolu sayisi (A3: ortak gen sayisi).
 
-GEO platform aciklama tablolarini data/annotation/ altinda onbellege alir (GPL570 buyuk bir dosya, birkac dakika
-surebilir). Indirme basarisiz olursa dosyayi tarayicidan indirip data/annotation/GPL570_family.soft.gz adiyla koy.
+GEO platform aciklama tablolarini data/annotation/ altinda onbellege alir. Indirme basarisiz olursa dosyayi tarayicidan indirip data/annotation/GPL570_family.soft.gz adiyla koyun.
 Ciktilar: ekrana sayilar, data/common_genes_golub_mile.txt
 """
 import gzip

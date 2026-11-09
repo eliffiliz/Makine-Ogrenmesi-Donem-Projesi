@@ -4,7 +4,7 @@ Golub (72 ornek) ve Armstrong (72 ornek) icin ayri ayri calisir.
 Onisleme (yalnizca EDA): sabit esiklerle kirp [100, 16000] -> log2 -> en yuksek varyansli
 2000 gen -> z-skor. Etiketler yalniz renklendirme ve fark testi icin kullanilir.
 
-DIKKAT: Etiketle secilen genler (fark testi, isi haritasi) yalnizca gorsellestirme icindir;
+Etiketle secilen genler (fark testi, isi haritasi) yalnizca gorsellestirme icindir,
 modelleme/degerlendirmede kullanilmaz.
 Cikti: figures/eda_<veri>_projection, eda_<veri>_heatmap (png+pdf), <veri>_diff_genes.csv
 """

@@ -1,8 +1,4 @@
-﻿"""Armstrong (MLL) verisi icin ilk inceleme: zip'i acar, dosyalari ve bicimini listeler.
-
-Beklenen konum: data/armstrong/MLL.zip  (veya data/armstrong/ icine elle koyulan dosyalar)
-Bu betik VERIYI YORUMLAMAZ; yalnizca dosya yapisini gosterir (gen kimlikleri var mi,
-orneklerin sirasi/etiketleri nerede, boyutlar). Ciktiyi karar vermek icin kullan.
+﻿"""Armstrong (MLL) verisi icin ilk inceleme
 """
 import sys
 import zipfile

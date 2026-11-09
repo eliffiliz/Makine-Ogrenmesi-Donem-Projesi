@@ -2,8 +2,8 @@
 
 GEO'dan platform aciklama tablolarini indirir (data/annotation/ altinda onbellege alir),
 prob -> gen sembolu eslemesi yapar ve iki veri setinin ortak gen sayisini hesaplar.
-Indirme basarisiz olursa: dosyayi tarayicidan indirip data/annotation/ icine koy
-(ad: GPL80_family.soft.gz gibi). Sutun adi bulunamazsa mevcut sutunlari yazdirip durur.
+Otomatik indirme calismazsa dosyayi elle indirip data/annotation/ altina koy
+(or. GPL80_family.soft.gz). Beklenen sutun yoksa mevcut sutunlari yazdirip durur.
 """
 import gzip
 import io

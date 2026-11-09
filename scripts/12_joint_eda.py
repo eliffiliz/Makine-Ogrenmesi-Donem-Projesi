@@ -4,7 +4,6 @@ A) Armstrong: sinif dagilimi, ham ve log2 dagilim, ornek medyanlari, ozet tablo 
 B) Birlesik PCA (ortak gen sembolleri): ham birlestirme ile veri seti ici z-skor karsilastirmasi.
    Veri setleri arasi dagilim/batch farkini gosterir (A1: iki veri seti arasi fark).
    Her sembol icin en yuksek varyansli prob secilir (etiket kullanmaz); Armstrong'da MLL -> ALL.
-DIKKAT: yalnizca kesif amaclidir, modelleme/degerlendirmede kullanilmaz.
 Onkosul: 09_common_genes.py calistirilmis olmali (platform tablolari data/annotation/ icinde).
 """
 import sys

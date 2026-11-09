@@ -4,17 +4,17 @@ Soru: egitim ve test kumeleri ifade duzeyinde birbirinden ayirt edilebiliyor mu?
 Sinif bilesimi iki kumede farkli oldugu icin (egitim 27 ALL / 11 AML, test 20 ALL / 14 AML)
 fark, sinif icinde de (yalnizca ALL, yalnizca AML) ayri ayri olculur.
 
-Yontemler (hepsi kesif amaclidir, model egitimi/degerlendirmesinde KULLANILMAZ):
+Yontemler:
   1) Ornek basina medyan log2 ifade: egitim vs test (Mann-Whitney U), sinif icinde.
   2) Gen basina Welch t-testi egitim vs test (BH-FDR < 0.05 olan gen orani), sinif icinde.
   3) "Kume siniflandirici": egitim/test etiketini tahmin eden L2-lojistik regresyonun
      tekrarli tabakali CV ROC-AUC'si. ~0.5 ayirt edilemiyor, 1'e yakin belirgin batch.
   4) PCA: silhouette (kume ile) ve silhouette (sinif ile).
 
-Not: gen filtresi (Dudoit) ve en yuksek varyansli 2000 gen secimi ne sinif ne de kume
+gen filtresi (Dudoit) ve en yuksek varyansli 2000 gen secimi ne sinif ne de kume
 etiketi kullanir; yine de bu sayilar yalnizca EDA icindir.
-Dikkat: yalnizca AML icinde kumeler cok kucuk (11 vs 14), bu yuzden CV AUC'si cok oynak
-olur ve 0.5'in altina da dusebilir; yorumlarken std degerine bakin, tek basina AUC'ye degil.
+yalnizca AML icinde kumeler cok kucuk (11 vs 14), bu yuzden CV AUC'si cok oynak
+olabilir ve 0.5'in altina da dusebilir; yorumlarken std degerine bakilmali, tek basina AUC'ye degil.
 
 Cikti: figures/eda_golub_batch.(png|pdf), figures/eda_golub_batch_summary.csv
 """

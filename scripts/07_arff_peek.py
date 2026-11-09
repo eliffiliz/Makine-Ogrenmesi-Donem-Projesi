@@ -1,7 +1,6 @@
 ﻿"""Armstrong MLL.arff dosyasinin yapisini gosterir: ozellik adlari, sinif etiketi, boyut, deger araligi.
 
-Girdi: data/armstrong/raw/MLL.arff   (06_armstrong_inspect.py zip'i acar)
-Bu betik yalnizca dosyayi OKUR ve ozetler; veriyi degistirmez.
+Girdi: data/armstrong/raw/MLL.arff  
 """
 import sys
 from collections import Counter

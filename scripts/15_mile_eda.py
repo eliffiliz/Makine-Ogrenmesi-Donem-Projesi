@@ -1,12 +1,9 @@
-﻿"""EDA adim 7: MILE (GSE13159) ALL/AML alt kumesi icin EDA (Golub icin yaptigimizla ayni yapi).
+﻿"""EDA adim 7: MILE (GSE13159) ALL/AML alt kumesi icin EDA (Golub icin yaptigimla ayni yapi).
 
 Girdi (05_mile_expression.py uretir): data/mile/mile_expr_all_aml.npy, mile_probes.txt, mile_samples.csv
-MILE degerleri ham Affymetrix sinyali DEGIL: GEO aciklamasina gore ozetleme + kuantil normalizasyon uygulanmis
-ve degerler [0, 1] araliginda. Bu yuzden Dudoit esikleme/filtresi uygulanmaz; EDA donusumu log2(x + 0.01),
-ardindan en yuksek varyansli 2000 prob ve z-skor (yalnizca kesif; etiket kullanmaz).
+
 Ciktilar: figures/eda_mile_quality, eda_mile_projection, eda_mile_heatmap (png+pdf),
           mile_eda_summary.csv, mile_diff_probes.csv, mile_hclust_results.csv
-DIKKAT: etiketli testler (Welch, isi haritasi) yalnizca kesiftir; modelleme/degerlendirmede kullanilmaz.
 """
 import sys
 from pathlib import Path

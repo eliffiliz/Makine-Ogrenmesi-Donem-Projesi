@@ -6,7 +6,7 @@
 4) Golub: egitim/test farki, sinif icinde (sinif bilesimi etkisini ayirmak icin)
 5) Armstrong: ALL vs MLL farki, AML vs (ALL+MLL) farkiyla karsilastirma
 
-DIKKAT: Yalnizca kesif. Etiket kullanan testler modelleme/degerlendirmede kullanilmaz.
+Yalnizca ogrenme amaclidir. Etiket kullanan testler modelleme/degerlendirmede kullanilmaz.
 """
 import sys
 from pathlib import Path

@@ -1,4 +1,4 @@
-﻿"""EDA adim 1: Golub veri kalitesi ve ifade dagilimlari (log oncesi/sonrasi). Sekil etiketleri Ingilizce.
+﻿"""EDA adim 1: Golub veri kalitesi ve ifade dagilimlari (log oncesi/sonrasi).
 
 Ciktilar (figures/):
   eda_class_distribution.(png|pdf)
@@ -7,7 +7,7 @@ Ciktilar (figures/):
   eda_quality_summary.csv
 
 NOT: Alt/ust esik (taban 100, tavan 16000; src/eda.py) literaturdeki sabit sabitlerdir (Dudoit ve ark. 2002),
-veriden ogrenilmez, bu yuzden sizinti olusturmaz. Bu betik yalnizca kesif amaclidir, model egitmez.
+veriden ogrenilmez, bu yuzden sizinti olusturmaz.
 """
 import sys
 from pathlib import Path

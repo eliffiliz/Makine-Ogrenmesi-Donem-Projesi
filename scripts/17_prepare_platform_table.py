@@ -7,7 +7,7 @@ Kullanim:
   - GEO platform sayfasindan "Download full table..." ile inen tablo (ilk satir 'ID<TAB>...' basligi)
   - GPL570.annot.gz (GEO annot dosyasi; '!platform_table_begin' isaretleri icerir)
 Cikti: data/annotation/<GPL>_family.soft.gz  -> scripts/15_mile_eda.py ve 16_common_genes_mile.py bu dosyayi
-dogrudan kullanir; internetten bir sey indirmeye calismazlar.
+dogrudan kullanir.
 """
 import gzip
 import io

@@ -7,8 +7,7 @@ Bu betik o degerin TESADUFEN ne kadar olasi oldugunu olcer:
   - her permutasyonda ayni siniflandirici ayni CV ile degerlendirilir,
   - tek tarafli p = (1 + #{bos AUC >= gozlenen AUC}) / (1 + n_perm).
 
-Kapsamlar: "Tum ornekler" (sinif bilesimi sabit tutularak karistirilir), "Yalniz ALL", "Yalniz AML".
-Yalnizca kesif amaclidir; model egitimi/degerlendirmesinde kullanilmaz.
+"Tum ornekler" (sinif bilesimi sabit tutularak karistirilir), "Yalniz ALL", "Yalniz AML".
 
 Cikti: figures/eda_golub_split_auc_permutation.csv (+ konsol)
 """
