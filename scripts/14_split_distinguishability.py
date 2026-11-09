@@ -1,13 +1,12 @@
-﻿"""EDA adim 6: Golub egitim ve bagimsiz test kumeleri birbirinden ayirt edilebiliyor mu?
+"""EDA adim 6: Golub egitim ve bagimsiz test kumeleri birbirinden ayirt edilebiliyor mu?
 
-Raporun 'egitim/test ayrimi' paragrafindaki TUM sayilari uretir (her sayi bu betigin ciktisindan gelmelidir):
+Raporun 'egitim/test ayrimi' paragrafindaki TUM sayilari uretir:
  1) ornek medyani farki (test - egitim): tum ornekler, yalniz ALL, yalniz AML (Mann-Whitney)
  2) egitim/test etiketini tahmin eden L2-lojistik regresyonun tekrarli tabakali 5 katli ROC-AUC'si
     (olcekleme kat icinde ogrenilir; ozellik: Dudoit filtresi sonrasi log2 genler)
  3) permutasyon testi: egitim/test etiketleri SINIF ICINDE karistirilir (sinif bilesimi sabit kalir)
  4) sinif icinde egitim vs test gen testi (Welch + BH-FDR): anlamli gen orani
  5) PCA'nin ilk iki bileseninde silhouette (egitim/test'e gore ve sinifa gore)
-DIKKAT: yalnizca kesif; model degerlendirmesinde kullanilmaz. Calisma suresi birkac dakika.
 Ciktilar: figures/eda_split_distinguishability.csv, figures/eda_split_null_auc.(png|pdf)
 """
 import sys
@@ -127,7 +126,7 @@ fig, axes = plt.subplots(1, 3, figsize=(11, 3.2))
 for ax, name in zip(axes, [s[0] for s in subsets[:3]]):
     null, stat = nulls[name]
     ax.hist(null, bins=25, color="lightgray", edgecolor="k")
-    ax.axvline(stat, color="tab:red", label=f"observed = {stat:.2f}")
+    ax.axvline(stat, color="tab:red", label=f"observed (1x5-fold CV) = {stat:.2f}")
     ax.set_title(name, fontsize=9)
     ax.set_xlabel("Mean CV ROC-AUC (permuted labels)")
     ax.set_ylabel("Count")
