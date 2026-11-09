@@ -6,15 +6,18 @@ modüldeki "non-cancer" ifadesi biyolojik olarak yanlıştır ve kullanılmaz).
 
 | | |
 |---|---|
-| Öğrenci | [Ad Soyad · Öğrenci No] |
-| Ara rapor (PDF) | [bağlantı veya dosya adı] |
+| Öğrenci | [Elif Filiz · 503020260013] |
+| Ara rapor (PDF) | `report/ara_rapor.pdf` (kaynak: `report/ara_rapor.tex`) |
 | Tanıtım videosu | [video URL'si] |
 | Aşama | Ara rapor: EDA ve veri analitiği (model eğitimi final aşamasındadır) |
 
 ## Araştırma soruları
 
-1. **RQ1:** Golub'un sabit 38/34 eğitim–test bölünmesi güvenilir mi? Eğitim ve test setleri arasında batch farkı var mı?
-2. **RQ2:** Golub verisindeki ayırt edici gen imzası, benzer veri setlerine (Armstrong, MILE) genelleniyor mu?
+1. **RQ1:** Golub'da 38/34 sabit bölme sonuçları ile 72 örnek üzerinde iç içe tabakalı çapraz doğrulama sonuçları arasında ne kadar fark vardır?
+2. **RQ2:** Öznitelik seçiminin çapraz doğrulamadan önce yapılması (sızıntılı protokol), sızıntısız protokole göre doğruluğu ne kadar şişirir?
+3. **RQ3:** Golub'da sızıntısız protokolle seçilen yöntemler, benzer bağımsız veri setlerinde (Armstrong ve MILE'ın ALL/AML alt kümesi) de benzer performans gösterir mi?
+
+Ara raporda RQ1–RQ3 için gerekli EDA yapılmıştır (özellikle Golub eğitim/test ayrılabilirliği, ölçek farkları, ALL/AML ayrımının zorluğu). Modelleme sonuçları finaldedir.
 
 ## Kurulum
 
@@ -32,17 +35,18 @@ Araçlar: Python (numpy, pandas, scipy, scikit-learn, matplotlib; ayrıntı `req
 |---|---|---|---|---|---|
 | **Golub (1999)** | Ana veri seti | 72 × 7.129 | ALL 47 · AML 25 (eğitim 38, bağımsız test 34) | Affymetrix Hu6800 (GEO GPL80) | Kaggle "Gene expression dataset (Golub)"; doi:10.1126/science.286.5439.531. GEO kaydı bulunamadı. |
 | **Armstrong (2002)** | Benzer veri seti | 72 × 12.533 | ALL 24 · MLL 20 · AML 28 | Affymetrix U95A / U95Av2 (GEO GPL91, GPL8300) | https://csse.szu.edu.cn/staff/zhuzx/MLL.zip; doi:10.1038/ng765. Özgün veri Broad Institute yayın sayfasında. GEO kaydı bulunamadı. |
-| **MILE (GSE13159)** | Yedek aday | 1.292 × 54.630 (yalnızca ALL/AML) | ALL 750 · AML 542 | Affymetrix HG-U133 Plus 2.0 (GEO GPL570) | GEO **GSE13159** |
+| **MILE (GSE13159)** | Benzer veri seti | 1.292 × 54.630 (yalnızca ALL/AML) | ALL 750 · AML 542 | Affymetrix HG-U133 Plus 2.0 (GEO GPL570) | GEO **GSE13159** |
 
-Golub ile ortak gen sembolü sayısı: Armstrong [N] · MILE [N] (`scripts/09_common_genes.py` ve `scripts/16_common_genes_mile.py` çıktısı).
+Golub ile ortak gen sembolü sayısı: Armstrong 5.822 · MILE 6.032 (`scripts/09_common_genes.py` ve `scripts/16_common_genes_mile.py` çıktısı).
 
 ### Lisans ve kullanım koşulları
 
 | Veri seti | Lisans / koşul |
 |---|---|
-| Golub (Kaggle kopyası) | [Kaggle veri seti sayfasındaki lisans alanı doğrulanacak] |
-| Armstrong | [Broad Institute / yayın sayfasındaki kullanım koşulu doğrulanacak] |
-| MILE (GEO) | [NCBI GEO veri kullanım politikası doğrulanacak; GEO kaydı için GSE13159 ve ilgili yayın atıfı yapılır] |
+| Golub (Kaggle kopyası) | Kaggle veri seti sayfasında lisans **CC0: Public Domain** olarak görünür (teslimden önce canlı sayfadan yeniden kontrol edilmelidir). CC0 bildirimini Kaggle'daki yükleyici yapmıştır; özgün veri Golub ve ark. (1999)'a aittir, atıf yapılır. |
+| Armstrong | Açık bir lisans veya kullanım koşulu bulunamadı. Özgün veri Broad Institute yayın sayfasında yer alır; indirilen `MLL.zip` bir üçüncü taraf (Shenzhen Üniversitesi) kopyasıdır. Veri yalnızca akademik/ders amacıyla kullanılır, Armstrong ve ark. (2002)'ye atıf yapılır, ham veri depoya konmaz. |
+| MILE (GEO) | NCBI, GEO verisinin kullanımına veya dağıtımına kısıt koymaz; ancak bazı veri gönderenler telif/fikri mülkiyet hakkı iddia edebilir (GEO Disclaimer: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html). GSE13159 ve Haferlach ve ark. (2010)'a atıf yapılır. |
+| Bu depodaki kod | MIT (bkz. `LICENSE`). |
 
 Her veri setinde özgün yayına atıf yapılır. Ham veri depoya konmaz (`.gitignore`).
 
@@ -115,14 +119,17 @@ Modelleme çıkarımları: sızıntısız pipeline (ölçekleme ve gen seçimi y
 | `scripts/` | çalıştırılabilir adımlar (sıra numaralı) |
 | `tests/` | birim testleri |
 | `figures/` | koddan üretilen şekiller ve özet tablolar |
-| `report/` | rapor kaynakları (LaTeX) |
+| `report/` | ara rapor kaynağı (`ara_rapor.tex`; şekiller `../figures/` altından alınır) |
+| `docs/` | literatür arama sorguları (`arama_sorgulari.md`) |
 | `data/` | ham veri (depoya konmaz) |
 
 ## Finale kadar plan
 
-- Planlanan yöntemler: [3 ML yöntemi ve gerekçesi]
-- Hedeflenen bonuslar: [B1 / B2 / B4]
-- Takvim ve riskler: [takvim]; p ≫ n kaynaklı aşırı uyum, batch ve platform farkı.
+- **Planlanan yöntemler:** L1 düzenlileştirmeli lojistik regresyon (gömülü gen seçimi, yorumlanabilirlik), SVM (küçük örnekli yüksek boyutlu veride güçlü referans), rastgele orman (doğrusal olmayan, ölçeklemeye duyarsız). Zaman kalırsa KNN ve XGBoost. Karar ağacı temel referans olarak raporlanır.
+- **Doğrulama:** ön işleme, filtre, ölçekleme ve gen seçimi yalnızca eğitim katlarında; 5×5 tekrarlı iç içe tabakalı CV ve ek olarak 38/34 sabit bölme; en az 5 tohum; Accuracy, Balanced Accuracy, Precision, Recall, Specificity, F1, ROC-AUC, karışıklık matrisi; eşleştirilmiş istatistiksel test. Aynı protokol Armstrong ve MILE'a uygulanır.
+- **Hedeflenen bonuslar:** B1 (MLP), B2 (TabPFN v2, öznitelik seçimi iç katlarda), B4 (Armstrong ve MILE birlikte); B3 yalnızca hocadan yazılı onay alınırsa.
+- **Takvim:** 1. hf sızıntısız pipeline; 2. hf Golub'da üç yöntem ve iç içe CV; 3. hf MILE uyumlaştırması; 4. hf ablasyon ve yorumlanabilirlik; 5. hf bonuslar; 6. hf rapor ve video.
+- **Riskler:** p ≫ n kaynaklı aşırı uyum ve yüksek varyans (tekrarlı CV, güven aralıkları); batch ve platform farkı; ortak gen eşlemesinde kayıp; MILE'da merkez etkisi; hesaplama süresi; Armstrong'un GEO numarasının olmaması.
 
 ## GenAI kullanımı
 
